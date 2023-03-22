@@ -1,0 +1,30 @@
+<nav id="side-nav">
+    <h2><span class="accent-magenta">Snel naar.</span> En progressie</h2>
+    <ol>
+        <% data.principes.forEach(principe => { %>
+            <li>
+            <a class="principe-link" href="#<%= principe.titel.toLowerCase() %>">
+                <section class="content">
+                    <img src="/images/svg/<%= principe.titel.toLowerCase() %>-icon.svg" alt="" width="30" height="48">
+                    <section class="principe-titel">
+                        <h3 class="accent-magenta"><%= principe.titel %></h3>
+                        <h4>Principe <%= principe.index %></h4>
+                    </section>
+                </section>
+
+                <% var total = 0; %>
+                <% principe.richtlijnen.forEach(function(richtlijn) { %>
+                <% total += richtlijn.succescriteria.length; %>
+                <% }) %>
+
+                <section class="principe-progressie">
+                    <progress id="<%= principe.titel.toLowerCase() %>-progressie-balk" value="0" max="<%= total %>"></progress>
+                    <p>
+                    <span id="<%= principe.titel.toLowerCase() %>-progressie">0</span> van de <%= total %>  
+                 </p>
+                </section>
+            </a>
+        </li>
+        <% }) %>
+    </ol>
+</nav>

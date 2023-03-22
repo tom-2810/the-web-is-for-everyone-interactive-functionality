@@ -1,0 +1,28 @@
+{
+  "name": "the-web-is-for-everyone-interactive-functionality",
+  "version": "1.0.0",
+  "description": "Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is",
+  "main": "app.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tom-2810/the-web-is-for-everyone-interactive-functionality.git"
+  },
+  "author": "Tom Poortman (tom.poortman@hva.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tom-2810/the-web-is-for-everyone-interactive-functionality/issues"
+  },
+  "homepage": "https://github.com/tom-2810/the-web-is-for-everyone-interactive-functionality#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
