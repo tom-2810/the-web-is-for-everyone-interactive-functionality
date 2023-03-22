@@ -1,0 +1,23 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/nav.ejs') %>
+
+<main>
+
+    <form action="/new" method="post">
+        <label>
+            url: 
+            <input type="url" name="url" id="url" value="<%= locals.values?.url ?? '' %>" >
+        </label>
+        <label>
+            website ID: 
+            <input type="text" name="websiteId" id="websiteId" value="<%= locals.values?.websiteId ?? '' %>" >
+        </label>
+
+        <button type="submit">Opslaan</button>
+    </form>
+
+    <%- include('./partials/secundairy-buttons.ejs') %>
+
+</main>
+
+<%- include('./partials/foot.ejs') %>
