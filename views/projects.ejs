@@ -5,12 +5,18 @@
 
     <form action="/new" method="post">
         <label>
-            url: 
+            Pagina URL: 
             <input type="url" name="url" id="url" value="<%= locals.values?.url ?? '' %>" >
         </label>
         <label>
-            website ID: 
-            <input type="text" name="websiteId" id="websiteId" value="<%= locals.values?.websiteId ?? '' %>" >
+            Partner: 
+            <select name="websiteId" id="websiteId" value="<%= locals.values?.websiteId ?? '' %>">
+                <% data.websites.forEach(website => { %>
+                    <option value="<%= website.id %>">
+                        <%= website.titel %>
+                    </option>
+                <% }) %>
+            </select>
         </label>
 
         <button type="submit">Opslaan</button>

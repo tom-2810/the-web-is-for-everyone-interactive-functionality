@@ -39,7 +39,7 @@ app.get('/contact', function (request, response) {
 
 // Route voor het toolboard
 app.get('/projects', function (request, response) {
-  fetchJson(`${url}/urls`).then((data) => {
+  fetchJson(`${url}/websites`).then((data) => {
     response.render('projects', { data: data, active: '/projects' })
   })
 })
@@ -55,7 +55,9 @@ app.post('/new', (request, response) => {
       const errorMessage = data.message
       const newData = { error: errorMessage, values: newURL }
 
-      response.render('projects', { data: newData, active: '/projects' })
+      fetchJson(`${url}/websites`).then((data) => {
+        response.render('projects', { data: data, active: '/projects' })
+      })
     }
   })
 })
