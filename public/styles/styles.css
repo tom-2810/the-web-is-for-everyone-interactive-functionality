@@ -102,43 +102,43 @@ header #navigation {
     font-size: 18px;
 }
 
-header #top-nav {
+header #site-nav {
     display: flex;
     gap: var(--medium-size);
     width: 100%;
 }
 
-header #top-nav a {
+header #site-nav a {
     text-decoration: none;
 }
 
-header #top-nav :is(a, li, label) {
+header #site-nav :is(a, li, label) {
     display: flex;
     align-items: center;
     gap: var(--small-size);
 }
 
-header #top-nav :is(a, li, label):hover {
+header #site-nav :is(a, li, label):hover {
     cursor: pointer;
     color: var(--c-huisstijl-magenta-plain);
     text-shadow: var(--c-schaduw-hover);
 }
 
-header #top-nav :is(a, li, label):hover path {
+header #site-nav :is(a, li, label):hover path {
     fill: var(--c-huisstijl-magenta-plain);
 }
 
-header #top-nav #inhoud {
+header #site-nav #inhoud {
     margin-right: auto
 }
 
-header #top-nav #thema {
+header #site-nav #thema {
     display: flex;
     align-items: center;
     gap: var(--small-size);
 }
 
-header #top-nav ul {
+header #site-nav ul {
     display: flex;
     list-style: none;
     flex-direction: row;
@@ -605,20 +605,20 @@ input:checked+.slider:before {
         display: none;
     }
 
-    header #top-nav section {
+    header #site-nav section {
         display: flex;
         flex-direction: column;
         gap: var(--small-size);
     }
 
-    header #top-nav section ul {
+    header #site-nav section ul {
         display: flex;
         flex-direction: column;
         gap: var(--small-size);
         padding: 0 var(--medium-size);
     }
 
-    header #top-nav {
+    header #site-nav {
         position: absolute;
         top: 4rem;
         left: 0;
@@ -634,7 +634,7 @@ input:checked+.slider:before {
         z-index: -1;
     }
 
-    #top-nav h2 {
+    #site-nav h2 {
         font-family: Fira Sans Regular;
         position: relative;
         color: var(--c-tekst);
@@ -643,7 +643,7 @@ input:checked+.slider:before {
         font-size: .9rem;
     }
 
-    #top-nav h2:before {
+    #site-nav h2:before {
         content: "";
         position: absolute;
         bottom: 0rem;
@@ -652,11 +652,11 @@ input:checked+.slider:before {
         width: 100%;
     }
 
-    header #top-nav #inhoud {
+    header #site-nav #inhoud {
         margin: 0;
     }
 
-    #top-nav li {
+    #site-nav li {
         font-weight: 500;
         font-size: var(--large-size);
     }
