@@ -8,6 +8,6 @@ hamburgerButton.addEventListener("click", function() {
         hamburgerButton.setAttribute("aria-expanded", "false");
     }
 
-    document.querySelector("#navigation #top-nav").classList.toggle("open");
+    document.querySelector("#navigation #site-nav").classList.toggle("open");
     document.body.classList.toggle("stop-scroll");
 });
