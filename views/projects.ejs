@@ -34,8 +34,8 @@
             <form id="sorter" method="get" action="/projects">
                     <label>Sorteren op: 
                         <select name="sort">
-                            <option <% if(direction=="ASC") {%> selected <%}%> value="ASC">URL oplopend</option>
-                            <option <% if(direction=="DESC") {%> selected <%}%> value="DESC">URL aflopend</option>
+                            <option <% if(direction=="ASC" || !direction) {%> selected <%}%> value="ASC" value="titel">Partner A-Z</option>
+                            <option <% if(direction=="DESC") {%> selected <%}%> value="DESC">Partner Z-A</option>
                         </select>
                     </label>
                     <button>OK</button>

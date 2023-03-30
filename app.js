@@ -1,4 +1,4 @@
-import express, { request, response } from 'express'
+import express, { json, request, response } from 'express'
 
 import { fetchJson, postJson } from './helpers/fetchWrapper.js'
 
@@ -7,9 +7,6 @@ const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1'
 
 const urlsData = await fetchJson(`${url}/urls?first=100`).then((data) => data);
 const websitesData = await fetchJson(`${url}/websites`).then((data) => data);
-
-let urls;
-let direction;
 
 console.log(websitesData)
 
@@ -49,10 +46,18 @@ app.get('/contact', function (request, response) {
 // Route voor projects
 app.get('/projects', function (request, response) {
 
+  let urls = structuredClone(urlsData.urls);
+  let direction;
+  
   if (request.query.sort == 'DESC') {
-    urls = urlsData.urls.reverse();
+    urls = urls.sort(function (a, b) {
+      return a.website.titel.localeCompare(b.website.titel);
+    }).reverse();
+    console.log(urls)
   } else {
-    urls = urlsData.urls;
+    urls = urls.sort(function (a, b) {
+      return a.website.titel.localeCompare(b.website.titel);
+    });
   }
   direction = request.query.sort;
   response.render('projects', { websitesData: websitesData.websites, urlsData: urls, active: '/projects', direction: direction })
