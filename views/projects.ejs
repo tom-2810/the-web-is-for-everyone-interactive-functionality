@@ -6,24 +6,62 @@
         <h1><span class="accent-magenta">Projecten.</span><br>Aan de bak!</h1>
     </section>
 
-    <form action="/new" method="post">
-        <label>
-            Pagina URL: 
-            <input type="url" name="url" id="url" value="<%= locals.values?.url ?? '' %>" >
-        </label>
-        <label>
-            Partner: 
-            <select name="websiteId" id="websiteId" value="<%= locals.values?.websiteId ?? '' %>">
-                <% data.websites.forEach(website => { %>
-                    <option value="<%= website.id %>">
-                        <%= website.titel %>
-                    </option>
-                <% }) %>
-            </select>
-        </label>
+    <section class="filter-section">
+        <h2>Filters</h2>
+        <form action="/new" method="post">
+            <label>
+                Pagina URL: 
+                <input required type="url" name="url" id="url" value="<%= locals.values?.url ?? '' %>" >
+            </label>
+            <label> 
+                Partner: 
+                <select required name="websiteId" id="websiteId" value="<%= locals.values?.websiteId ?? '' %>">
+                    <% websitesData.forEach(website => { %>
+                        <option value="<%= website.id %>">
+                            <%= website.titel %>
+                        </option>
+                    <% }) %>
+                </select>
+            </label>
+    
+            <button type="submit">Opslaan</button>
+        </form>
+    </section>
 
-        <button type="submit">Opslaan</button>
-    </form>
+    <section class="projects-overview">
+        <div class="all-projects-heading">
+            <h2>Alle projecten</h2>
+            <form id="sorter" method="get" action="/projects">
+                    <label>Sorteren op: 
+                        <select name="sort">
+                            <option <% if(direction=="ASC") {%> selected <%}%> value="ASC">URL oplopend</option>
+                            <option <% if(direction=="DESC") {%> selected <%}%> value="DESC">URL aflopend</option>
+                        </select>
+                    </label>
+                    <button>OK</button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="all-projects">
+            <% urlsData.forEach(url => { %>
+                <section class="project">
+                    <h3>
+                        <%= url.website.titel %>
+                    </h3>
+                    <a href="<%= url.url %>">
+                        <%= url.url %>
+                    </a>
+                </section>
+            <% }) %>
+        </div>
+    </section>
+
+        <!-- <button id="new-project-button">nieuw</button> -->
+
+            <!-- <button id="close">close</button> -->
+            
+    
 
     <%- include('./partials/secundairy-buttons.ejs') %>
 

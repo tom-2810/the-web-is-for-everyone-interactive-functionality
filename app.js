@@ -4,6 +4,15 @@ import { fetchJson, postJson } from './helpers/fetchWrapper.js'
 
 const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1'
 
+
+const urlsData = await fetchJson(`${url}/urls?first=100`).then((data) => data);
+const websitesData = await fetchJson(`${url}/websites`).then((data) => data);
+
+let urls;
+let direction;
+
+console.log(websitesData)
+
 // Maak een nieuwe express app
 const app = express()
 
@@ -37,11 +46,16 @@ app.get('/contact', function (request, response) {
   })
 })
 
-// Route voor het toolboard
+// Route voor projects
 app.get('/projects', function (request, response) {
-  fetchJson(`${url}/websites`).then((data) => {
-    response.render('projects', { data: data, active: '/projects' })
-  })
+
+  if (request.query.sort == 'DESC') {
+    urls = urlsData.urls.reverse();
+  } else {
+    urls = urlsData.urls;
+  }
+  direction = request.query.sort;
+  response.render('projects', { websitesData: websitesData.websites, urlsData: urls, active: '/projects', direction: direction })
 })
 
 app.post('/new', (request, response) => {

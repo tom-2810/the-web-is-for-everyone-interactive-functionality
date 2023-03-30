@@ -252,7 +252,8 @@ header #site-nav ul {
     transform: translateY(0) !important;
 }
 
-.active, .active path {
+.active,
+.active path {
     color: var(--c-huisstijl-magenta-plain);
     fill: var(--c-huisstijl-magenta-plain);
     text-shadow: var(--c-schaduw-hover);
@@ -276,20 +277,20 @@ header #site-nav ul {
 }
 
 #hamburger-icon .line {
-    transition: 
-    y 200ms ease-in 200ms,
-    rotate 200ms ease-in,
-    opacity 0ms 200ms,
-    fill 200ms;
+    transition:
+        y 200ms ease-in 200ms,
+        rotate 200ms ease-in,
+        opacity 0ms 200ms,
+        fill 200ms;
     transform-origin: center;
 }
 
 #hamburger-icon[aria-expanded="true"] .line {
-    transition: 
-    y 200ms ease-in,
-    rotate 200ms ease-in 200ms,
-    opacity 0ms 200ms,
-    fill 200ms;
+    transition:
+        y 200ms ease-in,
+        rotate 200ms ease-in 200ms,
+        opacity 0ms 200ms,
+        fill 200ms;
     fill: var(--c-huisstijl-magenta-plain);
 }
 
@@ -644,12 +645,12 @@ details::marker {
     fill: var(--c-tekst);
 }
 
-.richtlijnen details[open] > summary svg.arrow {
+.richtlijnen details[open]>summary svg.arrow {
     transform: rotate(180deg);
     transition: .2s;
 }
 
-.richtlijnen details[open] > summary svg.arrow path {
+.richtlijnen details[open]>summary svg.arrow path {
     fill: var(--c-huisstijl-magenta-plain);
     transition: .2s;
 }
@@ -722,11 +723,6 @@ details::marker {
     transition: 1s;
 }
 
-.principe-titel {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
 .principe-progressie {
     display: flex;
     justify-content: space-between;
@@ -746,6 +742,46 @@ details::marker {
 
 #projects .hero {
     background-image: url(/images/svg/mailbox.svg);
+}
+
+#projects .filter-section {
+
+}
+
+#projects .projects-overview {
+    grid-column: span 3;
+}
+
+#projects .projects-overview .all-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-auto-rows: 13rem;
+    gap: var(--small-size);
+}
+
+#projects .projects-overview .all-projects-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project {
+    padding: var(--small-size);
+    background-color: var(--c-header-achtergrond);
+    border-radius: var(--medium-radius);
+    /* border: 2px solid var(--c-header-achtergrond); */
+}
+
+.project * {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.project a {
+    display: block;
 }
 
 /* Contact page */
@@ -770,7 +806,8 @@ details::marker {
     flex-direction: column;
 }
 
-#contact form label input, #contact form label textarea {
+#contact form label input,
+#contact form label textarea {
     border: 1px solid rgb(194, 194, 194);
     border-radius: var(--small-radius);
     min-height: var(--medium-size);
@@ -873,419 +910,419 @@ details::marker {
 
 @media only screen and (max-width: 1650px) {
 
-        /*
+    /*
 ===============================
 📜 FONTS
 ===============================
 */
 
-/*
+    /*
 ===============================
 ✨ VARIABLES
 ===============================
 */
 
-/*
+    /*
 ===============================
 🌓 DARK-MODE
 ===============================
 */
 
-/*
+    /*
 ===============================
 💪 DEFAULT STYLING
 ===============================
 */
 
-/*
+    /*
 ===============================
 🐪 DRY CODE
 ===============================
 */
 
-/*
+    /*
 ===============================
 🧩 PARTIALS
 ===============================
 */
 
-/* Header */
+    /* Header */
 
-header #vra-logo {
-    width: 11rem;
-}
+    header #vra-logo {
+        width: 11rem;
+    }
 
-/*
+    /*
 ===============================
 📄 PAGES
 ===============================
 */
 
-/* Home page */
+    /* Home page */
 
-#uitleg {
-    grid-template-columns: repeat(2, 1fr);
-}
+    #uitleg {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-#toolgankelijk img {
-    height: 25rem;
-}
+    #toolgankelijk img {
+        height: 25rem;
+    }
 
-.item h3,
-.item p {
-    font-size: var(--medium-size);
-}
+    .item h3,
+    .item p {
+        font-size: var(--medium-size);
+    }
 
-/* Toolboard page */
+    /* Toolboard page */
 
-/* Projects page */
+    /* Projects page */
 
-/* Contact page */
+    /* Contact page */
 
 }
 
 
 @media only screen and (max-width: 900px) {
 
-        /*
+    /*
 ===============================
 📜 FONTS
 ===============================
 */
 
-/*
+    /*
 ===============================
 ✨ VARIABLES
 ===============================
 */
 
-:root {
-    --xlarge-size: 1.8rem;
-}
+    :root {
+        --xlarge-size: 1.8rem;
+    }
 
-/*
+    /*
 ===============================
 🌓 DARK-MODE
 ===============================
 */
 
-/*
+    /*
 ===============================
 💪 DEFAULT STYLING
 ===============================
 */
 
-/*
+    /*
 ===============================
 🐪 DRY CODE
 ===============================
 */
 
-/* Hero section for pages */
+    /* Hero section for pages */
 
-.hero {
-    background-position-x: 105%;
-    background-size: 45%;
-}
+    .hero {
+        background-position-x: 105%;
+        background-size: 45%;
+    }
 
-/* Call to action buttons */
+    /* Call to action buttons */
 
-.knoppen {
-    gap: var(--medium-size);
-}
+    .knoppen {
+        gap: var(--medium-size);
+    }
 
-.knop {
-    font-size: var(--medium-size);
-}
+    .knop {
+        font-size: var(--medium-size);
+    }
 
-/* Layout for multiple pages */
+    /* Layout for multiple pages */
 
-main:is(#toolboard, #projects, #contact) {
-    display: flex;
-    flex-direction: column;
-    margin-top: calc(var(--xxlarge-size) + var(--small-size));
-}
+    main:is(#toolboard, #projects, #contact) {
+        display: flex;
+        flex-direction: column;
+        margin-top: calc(var(--xxlarge-size) + var(--small-size));
+    }
 
-/*
+    /*
 ===============================
 🧩 PARTIALS
 ===============================
 */
 
-/* Header */
+    /* Header */
 
-header #vra-logo {
-    width: 14rem;
-    height: auto;
-}
+    header #vra-logo {
+        width: 14rem;
+        height: auto;
+    }
 
-header #navigation {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: var(--medium-size);
-    width: 93vw;
-}
+    header #navigation {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: var(--medium-size);
+        width: 93vw;
+    }
 
-/*
+    /*
 ===============================
 📄 PAGES
 ===============================
 */
 
-/* Home page */
+    /* Home page */
 
-main#home {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 93vw;
-    margin: calc(var(--xxlarge-size) + var(--medium-size)) 0;
-}
+    main#home {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 93vw;
+        margin: calc(var(--xxlarge-size) + var(--medium-size)) 0;
+    }
 
-#uitleg {
-    width: 100%;
-}
+    #uitleg {
+        width: 100%;
+    }
 
-#welkom {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: var(--large-size);
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    align-items: flex-start;
-}
+    #welkom {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: var(--large-size);
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        align-items: flex-start;
+    }
 
-#introductie {
-    max-width: 100%;
-}
+    #introductie {
+        max-width: 100%;
+    }
 
-#welkom img {
-    grid-column: 1;
-    grid-row: 1;
-    width: 70%;
-    margin: 0 auto;
-}
+    #welkom img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 70%;
+        margin: 0 auto;
+    }
 
-#slogan {
-    font-size: var(--xlarge-size);
-    width: 100%;
-}
+    #slogan {
+        font-size: var(--xlarge-size);
+        width: 100%;
+    }
 
-#uitleg {
-    grid-template-columns: 1fr;
-}
+    #uitleg {
+        grid-template-columns: 1fr;
+    }
 
-.item {
-    aspect-ratio: initial;
-    gap: .5rem;
-}
+    .item {
+        aspect-ratio: initial;
+        gap: .5rem;
+    }
 
-.item img {
-    width: 90%;
-    height: fit-content;
-}
+    .item img {
+        width: 90%;
+        height: fit-content;
+    }
 
-#toolgankelijk {
-    display: flex;
-    flex-direction: column;
-    grid-column: span 1;
-    grid-row: span 2;
-}
+    #toolgankelijk {
+        display: flex;
+        flex-direction: column;
+        grid-column: span 1;
+        grid-row: span 2;
+    }
 
-#toolgankelijk img {
-    margin: 0;
-    width: 100%;
-}
+    #toolgankelijk img {
+        margin: 0;
+        width: 100%;
+    }
 
-#inleiding {
-    font-size: var(--medium-size);
-    width: 100%;
-}
+    #inleiding {
+        font-size: var(--medium-size);
+        width: 100%;
+    }
 
-#toelichting {
-    width: 100%;
-}
+    #toelichting {
+        width: 100%;
+    }
 
-/* Toolboard page */
+    /* Toolboard page */
 
-#side-nav {
-    position: relative;
-    top: 0;
-    order: 2;
-    width: 100%;
-}
+    #side-nav {
+        position: relative;
+        top: 0;
+        order: 2;
+        width: 100%;
+    }
 
-#principes {
-    order: 3;
-    max-width: 100%;
-}
+    #principes {
+        order: 3;
+        max-width: 100%;
+    }
 
-.richtlijnen summary {
-    gap: .5rem;
-}
+    .richtlijnen summary {
+        gap: .5rem;
+    }
 
-.richtlijnen details h3 {
-    font-size: 1.04rem;
-}
+    .richtlijnen details h3 {
+        font-size: 1.04rem;
+    }
 
-/* Projects page */
+    /* Projects page */
 
-/* Contact page */
+    /* Contact page */
 
 }
 
 @media only screen and (max-width: 550px) {
 
-        /*
+    /*
 ===============================
 📜 FONTS
 ===============================
 */
 
-/*
+    /*
 ===============================
 ✨ VARIABLES
 ===============================
 */
 
-:root {
-    --xlarge-size: 2.22rem;
-}
+    :root {
+        --xlarge-size: 2.22rem;
+    }
 
-/*
+    /*
 ===============================
 🌓 DARK-MODE
 ===============================
 */
 
-/*
+    /*
 ===============================
 💪 DEFAULT STYLING
 ===============================
 */
 
-/*
+    /*
 ===============================
 🐪 DRY CODE
 ===============================
 */
 
-/* Hero section for pages */
+    /* Hero section for pages */
 
-.hero {
-    background-position-x: 130%;
-}
+    .hero {
+        background-position-x: 130%;
+    }
 
-/*
+    /*
 ===============================
 🧩 PARTIALS
 ===============================
 */
 
-/* Header */
+    /* Header */
 
-header #navigation {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: var(--c-header-achtergrond);
-    justify-content: space-between;
-}
+    header #navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--c-header-achtergrond);
+        justify-content: space-between;
+    }
 
-.mobiel-zichtbaar {
-    display: block;
-}
+    .mobiel-zichtbaar {
+        display: block;
+    }
 
-.desktop-zichtbaar {
-    display: none;
-}
+    .desktop-zichtbaar {
+        display: none;
+    }
 
-header #site-nav section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--small-size);
-}
+    header #site-nav section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small-size);
+    }
 
-header #site-nav section ul {
-    display: flex;
-    flex-direction: column;
-    gap: var(--small-size);
-    padding: 0 var(--medium-size);
-}
+    header #site-nav section ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--small-size);
+        padding: 0 var(--medium-size);
+    }
 
-header #site-nav {
-    position: absolute;
-    top: 4rem;
-    left: 0;
-    display: flex;
-    gap: var(--large-size);
-    flex-direction: column;
-    height: 100vh;
-    background-color: var(--c-header-achtergrond);
-    font-size: var(--medium-size);
-    padding: var(--xlarge-size) 0;
-    transform: translateY(-100%);
-    transition: transform .7s;
-    z-index: -1;
-}
+    header #site-nav {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        display: flex;
+        gap: var(--large-size);
+        flex-direction: column;
+        height: 100vh;
+        background-color: var(--c-header-achtergrond);
+        font-size: var(--medium-size);
+        padding: var(--xlarge-size) 0;
+        transform: translateY(-100%);
+        transition: transform .7s;
+        z-index: -1;
+    }
 
-#site-nav h2 {
-    font-family: Fira Sans Regular;
-    position: relative;
-    color: var(--c-tekst);
-    font-weight: lighter;
-    margin: 0 var(--medium-size);
-    font-size: .9rem;
-}
+    #site-nav h2 {
+        font-family: Fira Sans Regular;
+        position: relative;
+        color: var(--c-tekst);
+        font-weight: lighter;
+        margin: 0 var(--medium-size);
+        font-size: .9rem;
+    }
 
-#site-nav h2:before {
-    content: "";
-    position: absolute;
-    bottom: 0rem;
-    height: 1px;
-    background-color: var(--c-tekst);
-    width: 100%;
-}
+    #site-nav h2:before {
+        content: "";
+        position: absolute;
+        bottom: 0rem;
+        height: 1px;
+        background-color: var(--c-tekst);
+        width: 100%;
+    }
 
-header #site-nav #inhoud {
-    margin: 0;
-}
+    header #site-nav #inhoud {
+        margin: 0;
+    }
 
-#site-nav li {
-    font-weight: 500;
-    font-size: var(--large-size);
-}
+    #site-nav li {
+        font-weight: 500;
+        font-size: var(--large-size);
+    }
 
-header #vra-logo {
-    width: 12rem;
-    height: auto;
-}
+    header #vra-logo {
+        width: 12rem;
+        height: auto;
+    }
 
-#hamburger-icon {
-    display: block;
-}
+    #hamburger-icon {
+        display: block;
+    }
 
-/*
+    /*
 ===============================
 📄 PAGES
 ===============================
 */
 
-/* Home page */
+    /* Home page */
 
-#toelichting {
-    width: 90%;
-}
+    #toelichting {
+        width: 90%;
+    }
 
-#introductie {
-    margin-bottom: var(--xxlarge-size);
-}
+    #introductie {
+        margin-bottom: var(--xxlarge-size);
+    }
 
-/* Toolboard page */
+    /* Toolboard page */
 
-/* Projects page */
+    /* Projects page */
 
-/* Contact page */
+    /* Contact page */
 
 }
