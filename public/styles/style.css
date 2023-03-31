@@ -784,6 +784,18 @@ details::marker {
     display: block;
 }
 
+#projects #new-project-dialog {
+    position: fixed;
+    margin: 0 auto;
+    top: 25vh;
+    height: 75vh;
+    width: var(--default-width);
+    max-width: var(--max-width);
+    /* margin: 20vh 0; */
+    /* background-color: red; */
+    animation: appear .5s;
+}
+
 /* Contact page */
 
 #contact .hero {
@@ -1325,4 +1337,15 @@ details::marker {
 
     /* Contact page */
 
+}
+
+    /*
+===============================
+📄 ANIMATIONS
+===============================
+*/
+
+@keyframes appear {
+    from {transform: translateY(100vh);}
+    to {transform: translateY(0);}
 }

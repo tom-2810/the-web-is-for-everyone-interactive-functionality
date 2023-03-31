@@ -26,6 +26,7 @@
     
             <button type="submit">Opslaan</button>
         </form>
+        <button id="new-project-button" hidden>nieuw project</button>
     </section>
 
     <section class="projects-overview">
@@ -57,9 +58,28 @@
         </div>
     </section>
 
-        <!-- <button id="new-project-button">nieuw</button> -->
+    <dialog id="new-project-dialog" hidden>
+        <form action="/new" method="post">
+        <label>
+            Pagina URL: 
+            <input required type="url" name="url" id="url" value="<%= locals.values?.url ?? '' %>" >
+        </label>
+        <label> 
+            Partner: 
+            <select required name="websiteId" id="websiteId" value="<%= locals.values?.websiteId ?? '' %>">
+                <% websitesData.forEach(website => { %>
+                    <option value="<%= website.id %>">
+                        <%= website.titel %>
+                    </option>
+                <% }) %>
+            </select>
+        </label>
 
-            <!-- <button id="close">close</button> -->
+        <button type="submit">Opslaan</button>
+        <button id="close">Annuleer</button>
+    </form>
+    </dialog>
+    
             
     
 
