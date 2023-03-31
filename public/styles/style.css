@@ -745,7 +745,9 @@ details::marker {
 }
 
 #projects .filter-section {
-
+    position: sticky;
+    top: 7rem;
+    height: min-content;
 }
 
 #projects .projects-overview {
@@ -786,14 +788,14 @@ details::marker {
 
 #projects #new-project-dialog {
     position: fixed;
-    margin: 0 auto;
-    top: 25vh;
-    height: 75vh;
-    width: var(--default-width);
-    max-width: var(--max-width);
-    /* margin: 20vh 0; */
-    /* background-color: red; */
-    animation: appear .5s;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    height: 90vh;
+    width: 90vw;
+    padding: var(--medium-size);
+    border-radius: var(--medium-radius);
+    border: none;
 }
 
 /* Contact page */
@@ -1337,15 +1339,4 @@ details::marker {
 
     /* Contact page */
 
-}
-
-    /*
-===============================
-📄 ANIMATIONS
-===============================
-*/
-
-@keyframes appear {
-    from {transform: translateY(100vh);}
-    to {transform: translateY(0);}
 }

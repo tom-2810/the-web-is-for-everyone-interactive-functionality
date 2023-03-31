@@ -14,6 +14,7 @@ console.log(websitesData)
 const app = express()
 
 // Stel in hoe we express gebruiken
+
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
@@ -46,7 +47,9 @@ app.get('/contact', function (request, response) {
 // Route voor projects
 app.get('/projects', function (request, response) {
 
-  let urls = structuredClone(urlsData.urls);
+  // let urls = structuredClone(urlsData.urls);
+  let urls = [ ...urlsData.urls ];
+
   let direction;
   
   if (request.query.sort == 'DESC') {
@@ -63,7 +66,7 @@ app.get('/projects', function (request, response) {
   response.render('projects', { websitesData: websitesData.websites, urlsData: urls, active: '/projects', direction: direction })
 })
 
-app.post('/new', (request, response) => {
+app.post('/projects', (request, response) => {
   console.log(request.body)
   postJson(`${url}/urls`, request.body).then((data) => {
     let newURL = { ...request.body }
@@ -74,9 +77,7 @@ app.post('/new', (request, response) => {
       const errorMessage = data.message
       const newData = { error: errorMessage, values: newURL }
 
-      fetchJson(`${url}/websites`).then((data) => {
-        response.render('projects', { data: data, active: '/projects' })
-      })
+      response.redirect('/projects')
     }
   })
 })
