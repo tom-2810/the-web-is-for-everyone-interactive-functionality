@@ -21,27 +21,27 @@ var begrijpelijkChecklistValues = new Array(checkboxesBegrijpelijk.length);
 var robuustChecklistCheckboxes = [];
 var robuustChecklistValues = new Array(checkboxesRobuust.length);
 
-localStorage.getItem("waarneembaarProgression") ?
-    waarneembaarChecklistValues = JSON.parse(localStorage.getItem("waarneembaarProgression")) :
-    waarneembaarChecklistValues.fill(false);
+// checkboxesWaarneembaar ?
+//     waarneembaarChecklistValues = checkboxesWaarneembaar :
+//     waarneembaarChecklistValues.fill(false);
 
-localStorage.getItem("bedienbaarProgression") ?
-    bedienbaarChecklistValues = JSON.parse(localStorage.getItem("bedienbaarProgression")) :
-    bedienbaarChecklistValues.fill(false);
+//     checkboxesBedienbaar ?
+//     bedienbaarChecklistValues = checkboxesBedienbaar :
+//     bedienbaarChecklistValues.fill(false);
 
-localStorage.getItem("begrijpelijkProgression") ?
-    begrijpelijkChecklistValues = JSON.parse(localStorage.getItem("begrijpelijkProgression")) :
-    begrijpelijkChecklistValues.fill(false);
+//     checkboxesBegrijpelijk ?
+//     begrijpelijkChecklistValues = checkboxesBegrijpelijk :
+//     begrijpelijkChecklistValues.fill(false);
 
-localStorage.getItem("robuustProgression") ?
-    robuustChecklistValues = JSON.parse(localStorage.getItem("robuustProgression")) :
-    robuustChecklistValues.fill(false);
+//     checkboxesRobuust ?
+//     robuustChecklistValues = checkboxesRobuust :
+//     robuustChecklistValues.fill(false);
 
 checkboxesWaarneembaar.forEach(function (checkbox) {
     //vul de Array met de huidige checkbox vanuit de DOM
     waarneembaarChecklistCheckboxes.push(checkbox);
     //verander de checked waarde van de checkboxes aan de hand van de bijbehorende value (uit de localStorage of standaard false)
-    checkboxesWaarneembaar[waarneembaarChecklistCheckboxes.indexOf(checkbox)].checked = waarneembaarChecklistValues[waarneembaarChecklistCheckboxes.indexOf(checkbox)];
+    // checkboxesWaarneembaar[waarneembaarChecklistCheckboxes.indexOf(checkbox)].checked = waarneembaarChecklistValues[waarneembaarChecklistCheckboxes.indexOf(checkbox)];
     checkbox.addEventListener("change", function () {
         //verander de progressie van het principe aan de hand van de (handmatig) aangevinkte checkboxes
         changeProgression(checkbox, this.closest(".richtlijnen").parentElement.id);
@@ -58,7 +58,7 @@ checkboxesBedienbaar.forEach(function (checkbox) {
     //vul de Array met de huidige checkbox vanuit de DOM
     bedienbaarChecklistCheckboxes.push(checkbox);
     //verander de checked waarde van de checkboxes aan de hand van de bijbehorende value (uit de localStorage of standaard false)
-    checkboxesBedienbaar[bedienbaarChecklistCheckboxes.indexOf(checkbox)].checked = bedienbaarChecklistValues[bedienbaarChecklistCheckboxes.indexOf(checkbox)];
+    // checkboxesBedienbaar[bedienbaarChecklistCheckboxes.indexOf(checkbox)].checked = bedienbaarChecklistValues[bedienbaarChecklistCheckboxes.indexOf(checkbox)];
     checkbox.addEventListener("change", function () {
         //verander de progressie van het principe aan de hand van de (handmatig) aangevinkte checkboxes
         changeProgression(checkbox, this.closest(".richtlijnen").parentElement.id);
@@ -75,7 +75,7 @@ checkboxesBegrijpelijk.forEach(function (checkbox) {
     //vul de Array met de huidige checkbox vanuit de DOM
     begrijpelijkChecklistCheckboxes.push(checkbox);
     //verander de checked waarde van de checkboxes aan de hand van de bijbehorende value (uit de localStorage of standaard false)
-    checkboxesBegrijpelijk[begrijpelijkChecklistCheckboxes.indexOf(checkbox)].checked = begrijpelijkChecklistValues[begrijpelijkChecklistCheckboxes.indexOf(checkbox)];
+    // checkboxesBegrijpelijk[begrijpelijkChecklistCheckboxes.indexOf(checkbox)].checked = begrijpelijkChecklistValues[begrijpelijkChecklistCheckboxes.indexOf(checkbox)];
     checkbox.addEventListener("change", function () {
         //verander de progressie van het principe aan de hand van de (handmatig) aangevinkte checkboxes
         changeProgression(checkbox, this.closest(".richtlijnen").parentElement.id);
@@ -92,7 +92,7 @@ checkboxesRobuust.forEach(function (checkbox) {
     //vul de Array met de huidige checkbox vanuit de DOM
     robuustChecklistCheckboxes.push(checkbox);
     //verander de checked waarde van de checkboxes aan de hand van de bijbehorende value (uit de localStorage of standaard false)
-    checkboxesRobuust[robuustChecklistCheckboxes.indexOf(checkbox)].checked = robuustChecklistValues[robuustChecklistCheckboxes.indexOf(checkbox)];
+    // checkboxesRobuust[robuustChecklistCheckboxes.indexOf(checkbox)].checked = robuustChecklistValues[robuustChecklistCheckboxes.indexOf(checkbox)];
     checkbox.addEventListener("change", function () {
         //verander de progressie van het principe aan de hand van de (handmatig) aangevinkte checkboxes
         changeProgression(checkbox, this.closest(".richtlijnen").parentElement.id);

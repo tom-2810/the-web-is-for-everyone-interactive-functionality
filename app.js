@@ -2,19 +2,21 @@ import express, { json, request, response } from 'express'
 
 import { fetchJson, postJson } from './helpers/fetchWrapper.js'
 
-const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1'
+const baseUrl = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1'
 
 
-const urlsData = await fetchJson(`${url}/urls?first=100`).then((data) => data);
-const websitesData = await fetchJson(`${url}/websites`).then((data) => data);
+const allProjectsData = await fetchJson(`${baseUrl}/urls?first=100`).then((data) => data);
+const urlChecksData = await fetchJson(`${baseUrl}/url?id=clf7zms5va5670bw8rb7gwll2`).then((data) => data);
+const websitesData = await fetchJson(`${baseUrl}/websites`).then((data) => data);
+// const checksData = await fetchJson(`${baseUrl}/checks`).then((data) => data);
+const principesData = await fetchJson(`${baseUrl}/principes`).then((data) => data);
 
-console.log(websitesData)
+// console.log(checksData)
 
 // Maak een nieuwe express app
 const app = express()
 
 // Stel in hoe we express gebruiken
-
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
@@ -25,21 +27,21 @@ app.use(express.urlencoded({ extended: true }))
 
 // Maak een route voor de index
 app.get('/', (request, response) => {
-  fetchJson(url).then((data) => {
+  fetchJson(baseUrl).then((data) => {
     response.render('index', { data: data, active: '/' })
   })
 })
 
 // Route voor het toolboard
 app.get('/toolboard', function (request, response) {
-  fetchJson(`${url}/principes`).then((data) => {
-    response.render('toolboard', { data: data, active: '/toolboard' })
-  })
+
+  console.log("de checks van clf7zms5va5670bw8rb7gwll2: " + JSON.stringify(urlChecksData.url.checks[0].succescriteria));
+    response.render('toolboard', { checkedProjectSuccescriteria: urlChecksData.url.checks[0].succescriteria, principesData: principesData, active: '/toolboard' })
 })
 
-// Route voor het toolboard
+// Route voor contact
 app.get('/contact', function (request, response) {
-  fetchJson(url).then((data) => {
+  fetchJson(baseUrl).then((data) => {
     response.render('contact', { data: data, active: '/contact' })
   })
 })
@@ -48,7 +50,7 @@ app.get('/contact', function (request, response) {
 app.get('/projects', function (request, response) {
 
   // let urls = structuredClone(urlsData.urls);
-  let urls = [ ...urlsData.urls ];
+  let urls = [ ...allProjectsData.urls ];
 
   let direction;
   
@@ -56,19 +58,17 @@ app.get('/projects', function (request, response) {
     urls = urls.sort(function (a, b) {
       return a.website.titel.localeCompare(b.website.titel);
     }).reverse();
-    console.log(urls)
   } else {
     urls = urls.sort(function (a, b) {
       return a.website.titel.localeCompare(b.website.titel);
     });
   }
   direction = request.query.sort;
-  response.render('projects', { websitesData: websitesData.websites, urlsData: urls, active: '/projects', direction: direction })
+  response.render('projects', { websitesData: websitesData.websites, allProjectsData: urls, active: '/projects', direction: direction })
 })
 
 app.post('/projects', (request, response) => {
-  console.log(request.body)
-  postJson(`${url}/urls`, request.body).then((data) => {
+  postJson(`${baseUrl}/urls`, request.body).then((data) => {
     let newURL = { ...request.body }
 
     if (data.success) {

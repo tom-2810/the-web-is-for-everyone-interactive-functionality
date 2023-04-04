@@ -612,6 +612,7 @@ details::marker {
     position: absolute;
     height: var(--medium-size);
     width: var(--medium-size);
+    pointer-events: none;
 }
 
 .richtlijnen summary label svg path {
@@ -627,7 +628,7 @@ details::marker {
     appearance: none;
     -webkit-appearance: none;
     transition: .2s;
-
+    cursor: pointer;
 }
 
 .richtlijnen summary input:checked {
