@@ -48,23 +48,22 @@ app.get('/contact', function (request, response) {
 
 // Route voor projects
 app.get('/projects', function (request, response) {
+  const sortOptions = [
+    { label: 'Recent', field: 'createdAt', direction: 'DESC'},
+    { label: 'Partner A-Z', field: 'titel', direction: 'ASC'},
+    { label: 'Partner Z-A', field: 'titel', direction: 'DESC'}
+  ]
 
-  // let urls = structuredClone(urlsData.urls);
+  let { sort } = request.query
+  if (sort) sort = JSON.parse(sort)
+  else sort = sortOptions[0]
+
   let urls = [ ...allProjectsData.urls ];
-
-  let direction;
+  urls = urls.map((url) => ({ ...url, titel: url.website.titel }))
+  urls = urls.sort((a, b) => a[sort.field].localeCompare(b[sort.field]))
+  if (sort.direction === 'DESC') urls.reverse()
   
-  if (request.query.sort == 'DESC') {
-    urls = urls.sort(function (a, b) {
-      return a.website.titel.localeCompare(b.website.titel);
-    }).reverse();
-  } else {
-    urls = urls.sort(function (a, b) {
-      return a.website.titel.localeCompare(b.website.titel);
-    });
-  }
-  direction = request.query.sort;
-  response.render('projects', { websitesData: websitesData.websites, allProjectsData: urls, active: '/projects', direction: direction })
+  response.render('projects', { sortOptions, currentSort: sort, websitesData: websitesData.websites, allProjectsData: urls, active: '/projects' })
 })
 
 app.post('/projects', (request, response) => {

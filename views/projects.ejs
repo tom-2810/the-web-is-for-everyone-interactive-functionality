@@ -35,8 +35,9 @@
             <form id="sorter" method="get" action="/projects">
                     <label>Sorteren op: 
                         <select name="sort">
-                            <option <% if(direction=="ASC" || !direction) {%> selected <%}%> value="ASC" value="titel">Partner A-Z</option>
-                            <option <% if(direction=="DESC") {%> selected <%}%> value="DESC">Partner Z-A</option>
+                            <% for (let sortOption of sortOptions) { %>
+                                <option value="<%= JSON.stringify(sortOption) %>" <% if (JSON.stringify(currentSort) === JSON.stringify(sortOption)) { %>selected<% } %>><%- sortOption.label %></option>
+                            <% } %>
                         </select>
                     </label>
                     <button>OK</button>
