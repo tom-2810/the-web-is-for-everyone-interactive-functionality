@@ -7,7 +7,7 @@
     </section>
 
     <section class="filter-section">
-        <h2>Filters</h2>
+        <!-- <h2>Filters</h2> -->
         <form action="/projects" method="post">
             <label>
                 Pagina URL: 
@@ -79,10 +79,17 @@
     </section>
 
     <dialog id="new-project-dialog" hidden>
+
         <form action="/projects" method="post">
+            <div class="dialog-heading">
+                <h2>Maak nieuw project aan</h2>
+        <button type="button" id="close"><img src="/images/svg/cancel.svg" alt=""></button>
+
+            </div>
+
         <label>
             Pagina URL: 
-            <input required type="url" name="url" id="url" value="<%= locals.values?.url ?? '' %>" >
+            <input placeholder="https://gvb-online.nl/flex/" required type="url" name="url" id="url" value="<%= locals.values?.url ?? '' %>" >
         </label>
         <label> 
             Partner: 
@@ -96,7 +103,6 @@
         </label>
 
         <button type="submit">Opslaan</button>
-        <button id="close">Annuleer</button>
     </form>
     </dialog>
     

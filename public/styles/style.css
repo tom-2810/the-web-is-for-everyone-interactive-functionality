@@ -755,12 +755,20 @@ details::marker {
     font-size: var(--medium-size);
 }
 
-#projects select, #projects button {
+#projects select,
+#projects button,
+#projects input,
+#projects option {
     font-size: var(--medium-size);
     padding: var(--small-radius) var(--medium-size);
     border-radius: var(--small-radius);
     border: 1px solid var(--c-tekst);
     background-color: var(--c-header-achtergrond);
+}
+
+#projects select,
+#projects button {
+    cursor: pointer;
 }
 
 #projects button {
@@ -769,9 +777,19 @@ details::marker {
     color: var(--c-header-achtergrond);
 }
 
-#projects select:hover, #projects button:hover {
+#projects select:hover,
+#projects button:hover,
+#projects input:hover {
     scale: 1.01;
     box-shadow: var(--c-schaduw-hover);
+}
+
+#projects #close:hover {
+    scale: 1.02;
+}
+
+#close img {
+    cursor: pointer;
 }
 
 #projects .projects-overview {
@@ -784,7 +802,7 @@ details::marker {
 #projects .projects-overview .all-projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
-    grid-auto-rows: 13rem;
+    /* grid-auto-rows: 13rem; */
     gap: var(--small-size);
 }
 
@@ -821,7 +839,7 @@ details::marker {
 .project a {
     position: relative;
     display: block;
-    width: 75%;
+    width: 85%;
     z-index: 1;
 }
 
@@ -835,19 +853,58 @@ details::marker {
 }
 
 .project .project-progress {
-    margin-top: var(--medium-size);
+    margin-top: var(--large-size);
+}
+
+.project .project-progress progress {
+    width: 100%;
 }
 
 #projects #new-project-dialog {
     position: fixed;
     top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-    height: 90vh;
-    width: 90vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: var(--medium-size);
-    border-radius: var(--medium-radius);
+    border-radius: var(--small-radius);
     border: none;
+}
+
+#projects #new-project-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#projects #new-project-dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-size);
+}
+
+#projects #new-project-dialog form label {
+    display: flex;
+    flex-direction: column;
+}
+
+#projects #new-project-dialog form input {
+    height: inherit;
+}
+
+#projects .dialog-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--xxlarge-size);
+}
+
+#projects #close {
+    display: grid;
+    align-items: center;
+    all: unset;
+    margin-left: auto;
+}
+
+#projects #close img {
+    width: var(--xlarge-size);
+    height: var(--xlarge-size);
 }
 
 /* Contact page */
