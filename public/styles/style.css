@@ -751,6 +751,29 @@ details::marker {
     height: min-content;
 }
 
+#projects #sorter * {
+    font-size: var(--medium-size);
+}
+
+#projects select, #projects button {
+    font-size: var(--medium-size);
+    padding: var(--small-radius) var(--medium-size);
+    border-radius: var(--small-radius);
+    border: 1px solid var(--c-tekst);
+    background-color: var(--c-header-achtergrond);
+}
+
+#projects button {
+    border: 1px solid var(--c-header-achtergrond);
+    background-color: var(--c-huisstijl-magenta-plain);
+    color: var(--c-header-achtergrond);
+}
+
+#projects select:hover, #projects button:hover {
+    scale: 1.01;
+    box-shadow: var(--c-schaduw-hover);
+}
+
 #projects .projects-overview {
     display: flex;
     flex-direction: column;
@@ -810,7 +833,10 @@ details::marker {
     width: 100%;
     z-index: 0;
 }
-    
+
+.project .project-progress {
+    margin-top: var(--medium-size);
+}
 
 #projects #new-project-dialog {
     position: fixed;
@@ -1207,6 +1233,15 @@ details::marker {
     }
 
     /* Projects page */
+
+    #projects .filter-section {
+        position: relative;
+        top: 0;
+    }
+
+    #projects #sorter {
+        text-align: right;
+    }
 
     /* Contact page */
 
