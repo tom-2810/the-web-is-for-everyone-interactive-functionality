@@ -803,7 +803,7 @@ details::marker {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
     /* grid-auto-rows: 13rem; */
-    gap: var(--small-size);
+    gap: var(--medium-size);
 }
 
 #projects .projects-overview .all-projects-heading {
@@ -819,9 +819,20 @@ details::marker {
     background-color: var(--c-header-achtergrond);
     border-radius: var(--medium-radius);
     /* border: 2px solid var(--c-header-achtergrond); */
+    transition: .05s;
+}
+
+.project:hover {
+    scale: 1.04;
+    box-shadow: var(--c-schaduw-hover);
+}
+
+.project:hover .project-summary img {
+    opacity: 1;
 }
 
 .project .project-summary img {
+    opacity: .8;
     margin-bottom: var(--small-size);
 }
 
@@ -871,7 +882,7 @@ details::marker {
 }
 
 #projects #new-project-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.75);
 }
 
 #projects #new-project-dialog form {
@@ -905,6 +916,18 @@ details::marker {
 #projects #close img {
     width: var(--xlarge-size);
     height: var(--xlarge-size);
+}
+
+.open-icon {
+    position: absolute;
+    right: var(--medium-size);
+    opacity: 0;
+    width: var(--medium-size);
+    height: var(--medium-size);
+}
+
+.project:hover .open-icon {
+    opacity: 1;
 }
 
 /* Contact page */

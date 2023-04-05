@@ -48,6 +48,7 @@
         <div class="all-projects">
             <% allProjectsData.forEach(url => { %>
                 <section class="project">
+                    <img class="open-icon" src="/images/svg/open.svg" alt="">
                     <a class="to-toolboard" href="/toolboard?id=<%= url.id %>" title="Open <%= url.url %> van <%= url.website.titel %> op het Toolboard"></a>
 
                     <div class="project-summary">
