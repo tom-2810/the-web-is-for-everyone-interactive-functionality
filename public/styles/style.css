@@ -752,12 +752,15 @@ details::marker {
 }
 
 #projects .projects-overview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-size);
     grid-column: span 3;
 }
 
 #projects .projects-overview .all-projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
     grid-auto-rows: 13rem;
     gap: var(--small-size);
 }
@@ -770,10 +773,19 @@ details::marker {
 }
 
 .project {
-    padding: var(--small-size);
+    position: relative;
+    padding: var(--medium-size);
     background-color: var(--c-header-achtergrond);
     border-radius: var(--medium-radius);
     /* border: 2px solid var(--c-header-achtergrond); */
+}
+
+.project .project-summary img {
+    margin-bottom: var(--small-size);
+}
+
+.project h3 {
+    font-size: var(--medium-size);
 }
 
 .project * {
@@ -784,8 +796,21 @@ details::marker {
 }
 
 .project a {
+    position: relative;
     display: block;
+    width: 75%;
+    z-index: 1;
 }
+
+.project .to-toolboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+    
 
 #projects #new-project-dialog {
     position: fixed;

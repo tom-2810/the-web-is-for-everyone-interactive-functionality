@@ -48,13 +48,18 @@
         <div class="all-projects">
             <% allProjectsData.forEach(url => { %>
                 <section class="project">
-                    <h3>
+                    <a class="to-toolboard" href="/toolboard?id=<%= url.id %>" title="Open <%= url.url %> van <%= url.website.titel %> op het Toolboard"></a>
+
+                    <div class="project-summary">
+                        <img width="64" src="<%= `${faviconAPI}${url.url}/&size=256` %>" alt="">
+                        <h3>
                         <%= url.website.titel %>
                     </h3>
                     <a href="<%= url.url %>">
                         <%= url.url %>
                     </a>
-                    <a href="/toolboard?id=<%= url.id %>">toolboard</a>
+                    </div>
+                    
                 </section>
             <% }) %>
         </div>

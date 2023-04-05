@@ -4,8 +4,10 @@ import { fetchJson, postJson } from './helpers/fetchWrapper.js'
 
 const baseUrl = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1'
 
+const faviconAPI = 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url='
 
-const allProjectsData = await fetchJson(`${baseUrl}/urls?first=100`).then((data) => data);
+
+const allProjectsData = await fetchJson(`${baseUrl}/urls?first=150`).then((data) => data);
 // const urlChecksData = await fetchJson(`${baseUrl}/url?id=clf7zms5va5670bw8rb7gwll2`).then((data) => data);
 const websitesData = await fetchJson(`${baseUrl}/websites`).then((data) => data);
 // const checksData = await fetchJson(`${baseUrl}/checks`).then((data) => data);
@@ -77,7 +79,7 @@ app.get('/projects', function (request, response) {
   urls = urls.sort((a, b) => a[sort.field].localeCompare(b[sort.field]))
   if (sort.direction === 'DESC') urls.reverse()
 
-  response.render('projects', { sortOptions, currentSort: sort, websitesData: websitesData.websites, allProjectsData: urls, active: '/projects' })
+  response.render('projects', { faviconAPI, sortOptions, currentSort: sort, websitesData: websitesData.websites, allProjectsData: urls, active: '/projects' })
 })
 
 app.post('/projects', (request, response) => {
