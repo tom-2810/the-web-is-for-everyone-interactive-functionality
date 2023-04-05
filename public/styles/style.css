@@ -55,8 +55,8 @@
 */
 
 [data-theme="dark"] {
-    --c-achtergrond: #161616;
-    --c-header-achtergrond: #272727;
+    --c-achtergrond: #212121;
+    --c-header-achtergrond: #2C2C2C;
     --c-tekst: #ffffff;
     --c-huisstijl-magenta-plain: #ff0055;
     --logo: url(/images/svg/vervoerregio_amsterdam_logo_darkmode.svg);
@@ -86,6 +86,7 @@ body {
     align-items: center;
     align-content: center;
     background-color: var(--c-achtergrond);
+    transition: background-color .2s;
 }
 
 header {
@@ -205,6 +206,7 @@ header #site-nav {
     display: flex;
     gap: var(--medium-size);
     width: 100%;
+    align-items: center;
 }
 
 header #site-nav a {
@@ -314,6 +316,12 @@ header #site-nav ul {
     background: var(--c-huistijl-magenta);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle svg {
+    display: block;
+    height: 4rem;
+    width: 4rem;
 }
 
 .switch {
@@ -774,7 +782,7 @@ details::marker {
 #projects button {
     border: 1px solid var(--c-header-achtergrond);
     background-color: var(--c-huisstijl-magenta-plain);
-    color: var(--c-header-achtergrond);
+    color: white;
 }
 
 #projects select:hover,
@@ -832,7 +840,7 @@ details::marker {
 }
 
 .project .project-summary img {
-    opacity: .8;
+    opacity: .75;
     margin-bottom: var(--small-size);
 }
 
@@ -958,6 +966,7 @@ details::marker {
     border-radius: var(--small-radius);
     min-height: var(--medium-size);
     padding: .5rem;
+    background-color: var(--c-achtergrond);;
 }
 
 #contact form label textarea {
@@ -1408,6 +1417,7 @@ details::marker {
 
     header #site-nav {
         position: absolute;
+        align-items: baseline;
         top: 4rem;
         left: 0;
         display: flex;
