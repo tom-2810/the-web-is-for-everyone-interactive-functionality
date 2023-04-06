@@ -886,6 +886,7 @@ details::marker {
     transform: translate(-50%, -50%);
     padding: var(--medium-size);
     border-radius: var(--small-radius);
+    background-color: var(--c-header-achtergrond);
     border: none;
 }
 
