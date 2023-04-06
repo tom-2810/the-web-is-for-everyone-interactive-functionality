@@ -26,10 +26,6 @@ Het Toolboard is tot stand gekomen met ejs en Node.
 Door middel van een nested forEach-loop worden alle richtlijnen per principe en de projecten (urls) uit de [Vervoerregio Amsterdam API](https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principles) gehaald.
 
 ```js
-
-```
-
-```js
 const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principes'
 ```
 Verder is navigatie mogelijk door middel van Express Routing.
