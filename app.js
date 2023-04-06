@@ -42,9 +42,9 @@ app.get('/toolboard', function (request, response) {
   if (id) {
     fetchJson(`${baseUrl}/url?id=${id}`).then((data) => {
       if (data.url.checks.length != 0) {
-        response.render('toolboard', { checkedProjectSuccescriteria: data.url.checks[0].succescriteria, principesData: principesData, active: '/toolboard' })
+        response.render('toolboard', { currentProject: data, checkedProjectSuccescriteria: data.url.checks[0].succescriteria, principesData: principesData, active: '/toolboard' })
       } else {
-        response.render('toolboard', { checkedProjectSuccescriteria: data.url.checks, principesData: principesData, active: '/toolboard' })
+        response.render('toolboard', { currentProject: data, checkedProjectSuccescriteria: data.url.checks, principesData: principesData, active: '/toolboard' })
       }
     });
   } else {

@@ -539,6 +539,13 @@ main#home {
 
 /* Toolboard page */
 
+#toolboard .currentProject {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 #toolboard .hero {
     background-image: url(/images/svg/toolboard-check.svg);
 }
