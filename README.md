@@ -1,34 +1,56 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+<!-- > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md) -->
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# ⚙️ Toolgankelijk
+Tool in checklist vorm om website toegankelijker te maken.
 
-## Inhoudsopgave
+![image](https://user-images.githubusercontent.com/112861614/225776803-49c18e73-4257-42db-ad5a-83c4e93b9f2f.png)
+
+<!--
+## 📃 Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
+  * [Gebruik](#gebruik)
   * [Licentie](#licentie)
+  * [Bronnen](#bronnen)
+ -->
 
-## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+## 🤔 Beschrijving
+Samen met deze toegankelijkheids-tool maakt u eenvouding websites en apps toegankelijker via een checklist, geleidt door de WCAG principes en richtlijnen.
+![Schermafbeelding 2023-04-06 093350](https://user-images.githubusercontent.com/112861614/230306904-0024800e-5524-4607-b6d8-fbe921c194ff.png)
+Live link gehost via Cyclic: https://dull-cyan-seagull-hose.cyclic.app/
 
-## Gebruik
-<!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+## 💻 Kenmerken
+Het Toolboard is tot stand gekomen met ejs en Node.
+Door middel van een nested forEach-loop worden alle richtlijnen per principe en de projecten (urls) uit de [Vervoerregio Amsterdam API](https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principles) gehaald.
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+```js
 
-## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+```
 
+```js
+const url = 'https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/principes'
+```
+Verder is navigatie mogelijk door middel van Express Routing.
 
-## Bronnen
+Route in app.js
+```js
+app.get('/toolboard', function (request, response) {
+  fetchJson(url).then((data) => {
+  response.render('toolboard', {data: data, active: '/toolboard'})
+  })
+})
+```
 
-## Licentie
+## ⬇️ Installatie
+Fork het project en voer eerst `npm install` uit in de terminal om alle nodige packages en dependencies binnen te halen. Vervolgens maakt `npm start` een port vrij om de website te bekijken in de browser.
+
+## 🙃 Gebruik
+Werk met deze checklist de toegankelijkheidsrichtlijnen af per succescriteria om een website stap voor stap te beoordelen. Vervolgens kan je aan de hand van de onvoltooide richtlijnen verbeteringen aanbrengen aan de behandelde website.
+
+<!-- ## Bronnen -->
+
+## 👾 Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
