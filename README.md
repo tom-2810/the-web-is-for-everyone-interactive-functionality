@@ -39,6 +39,11 @@ app.get('/toolboard', function (request, response) {
 })
 ```
 
+### Progressive Enhancement
+
+Om te beginnen met de core functionaliteit van de website bepaal je de basis van een werkende website. Zo zorg je dat je website ook zonder JavaScript gewoon bruikbaar is, wat kan voorkomen op oudere apparaten. Vervolgens kan je door aanpassingen aan te brengen met JavaScript en CSS het gebruik voor de eindgebruiker verbeteren. Dit valt onder de werkwijze die Progressive Enhancement heet.
+Om een project aan te kunnen maken kan de gebruiker een url samen met een gekoppelde partner versturen. Dit wilde ik met een dialog verwezenlijken. Maar een dialog is alleen werkende met JavaScript. Als dit niet beschikbaar zou zijn, heb ik dus een andere oplossing nodig. Zo heb ik de core functionaliteit eerst in beeld gebracht, namelijk het versturen. Dit is ook mogelijk met slechts een form element en verdere afhandeling aan de server-side. Als JavaScript wel aanwezig is, wordt dit vervangen met de dialog. Zo garandeer ik dat de gebruiker de website altijd iets kan versturen (mits er een internet verbinding is natuurlijk).
+
 ## ⬇️ Installatie
 Fork het project en voer eerst `npm install` uit in de terminal om alle nodige packages en dependencies binnen te halen. Vervolgens maakt `npm start` een port vrij om de website te bekijken in de browser.
 
