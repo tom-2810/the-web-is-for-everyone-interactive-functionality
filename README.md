@@ -55,6 +55,53 @@ Fork het project en voer eerst `npm install` uit in de terminal om alle nodige p
 ## 🙃 Gebruik
 Werk met deze checklist de toegankelijkheidsrichtlijnen af per succescriteria om een website stap voor stap te beoordelen. Vervolgens kan je aan de hand van de onvoltooide richtlijnen verbeteringen aanbrengen aan de behandelde website.
 
+Stap 1:
+Maak een project aan met een URL die gekoppeld is aan een partner.
+Open de projects pagina.
+https://dull-cyan-seagull-hose.cyclic.app/projects
+
+Stap 1.1:
+ Klik links op de knop "nieuw project".
+
+![image](https://user-images.githubusercontent.com/112861614/230772726-8a2a6a94-4a16-4527-8355-3f0c0dea50b0.png)
+
+Stap 1.2:
+Vul een url in en selecteer de bijbehorende partner. Klik onderaan op de knop "Oplaan"
+
+![image](https://user-images.githubusercontent.com/112861614/230772793-7a457923-2c1f-4f89-b060-8ee5ea2cfacc.png)
+
+Stap 2:
+Open het zojuist aangemaakte project op de projects pagina.
+
+Stap 2.1:
+Sorteer op "Recent" om het zojuist aangemaakte project linksboven (als eerste) te tonen.
+
+![image](https://user-images.githubusercontent.com/112861614/230772876-412ee3fe-0324-45ba-8432-9b820c08190d.png)
+
+Stap 2.2:
+Klik op het zojuist door u aangemaakte project linksboven in de lijst.
+
+![image](https://user-images.githubusercontent.com/112861614/230772957-6e6efcf2-4a97-421c-9166-cb77bfef515d.png)
+
+Stap 3:
+Ga de checklist af om de url te controleren op de toegankelijkheids succescriteria.
+
+Stap 3.1:
+Open een richtlijn van een principe.
+
+![image](https://user-images.githubusercontent.com/112861614/230773003-30181310-b1c0-4f2a-99d3-782c114811f2.png)
+
+Stap 3.2:
+Open een succescriteria.
+
+![image](https://user-images.githubusercontent.com/112861614/230773037-f1526c23-d504-4934-812f-a32e28440539.png)
+
+Stap 3.3:
+Vink een succescriteria af. Klik op het vierkantje (checkbox) rechts van de succescriteria titel.
+
+![image](https://user-images.githubusercontent.com/112861614/230773094-f25c383e-94dc-4061-885b-9ac35d2c886a.png)
+
+
 <!-- ## Bronnen -->
 
 ## 👾 Licentie
